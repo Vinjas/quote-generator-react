@@ -68,12 +68,11 @@ class QuoteBox extends React.Component {
     ////////////// RENDER
     render() {
         return (
-            <div>
-                <h1>Random Quotes 2</h1>
-                <h2>{this.state.quote}</h2>
-                <h3>{this.state.author}</h3>
-                <button onClick={this.changeQuote}>Next quote</button>
-                <button onClick={this.debug}>Debug</button>
+            <div id="quote-box">
+                <p id="text">{this.state.quote}</p>
+                <p id="author">{this.state.author}</p>
+                <button id="new-quote" onClick={this.changeQuote}>Next quote</button>
+                <a id="tweet-quote" href="https://twitter.com/intent/tweet?text={this.state.quote}" target="_blanck">tweet</a>
             </div>
         )
     }
