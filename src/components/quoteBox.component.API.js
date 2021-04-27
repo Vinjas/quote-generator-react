@@ -1,11 +1,5 @@
 import React from "react"
 
-//const quotes = ["Hola", "Adios", "Hasta Luego", "Bienvenido", "Bon voyage", "Otra cita"]
-
-function randomNumber(arr) {
-    return arr[Math.floor(Math.random() * arr.length)]
-}
-
 class QuoteBox extends React.Component {
     constructor(props) {
         super(props)
@@ -61,9 +55,7 @@ class QuoteBox extends React.Component {
     }
 
     // Debug button
-    debug() {
-        return console.log(randomNumber())
-    }
+
 
     ////////////// RENDER
     render() {
