@@ -1,7 +1,5 @@
-import React from "react"
 import ReactDOM from "react-dom"
-import QuoteContainer from "./containers/quoteBox.container.js"
+import QuoteContainer from "./containers/quoteBox.container.jsx"
 
 
-
-ReactDOM.render(<QuoteContainer />, document.getElementById("root"))
+ReactDOM.render(QuoteContainer, document.getElementById("root"))
