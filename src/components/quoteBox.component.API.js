@@ -1,5 +1,4 @@
 import React from "react"
-import {getRandomQuoteAPI} from "../api/apiHandler"
 
 //const quotes = ["Hola", "Adios", "Hasta Luego", "Bienvenido", "Bon voyage", "Otra cita"]
 
