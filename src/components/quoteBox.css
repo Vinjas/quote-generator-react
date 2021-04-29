@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+:root{
+    --light-blue: #00A4BD;
+    --black: #3D3D3D;
+    --white: #F5F5F5;
+    --box-shadow: #263544;
+}
+
+#quote-box {
+    font-family:'Questrial', sans-serif;
+    font-size: 16px;
+    max-width: 400px;
+    margin-top: 120px;
+}
+
+#quote-text {
+    min-height: 100px;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: 20px 20px var(--box-shadow);
+
+}
+
+#comillas {
+    fill: var(--light-blue);
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#text {
+    color: var(--black);
+    font-size: 19px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    
+}
+
+#author {
+    color: var(--light-blue);
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+#new-quote {
+    background-color: var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    box-shadow: 20px 5px var(--box-shadow);
+}
+
+#tweet-quote {
+    display: block;
+    width: 10%;
+}
+
+#tumblr-quote {
+    display: block;
+    width: 10%;
+}
+
+#new-quote:hover {
+    background-color: #a8a8a8;
+    width: auto;
+}
