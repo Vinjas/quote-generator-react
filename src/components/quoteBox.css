@@ -19,17 +19,16 @@
     background-color: var(--white);
     border-radius: 5px;
     box-shadow: 20px 20px var(--box-shadow);
-
+    margin-bottom: 30px;
+    padding-top: 20px;
 }
-
 #comillas {
-    fill: var(--light-blue);
+    filter: invert(49%) sepia(98%) saturate(1684%) hue-rotate(151deg) brightness(88%) contrast(101%);
     text-align: center;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
 #text {
     color: var(--black);
     font-size: 19px;
@@ -45,25 +44,35 @@
     padding-bottom: 20px;
 }
 
+
+#button-row {
+    width: 400px;
+}
+
 #new-quote {
     background-color: var(--white);
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
     box-shadow: 20px 5px var(--box-shadow);
+    width: 120px;
+}
+#new-quote:hover {
+    background-color: #a8a8a8;
 }
 
 #tweet-quote {
     display: block;
-    width: 10%;
+    height: 48px;
+    border-radius: 5px;
+    box-shadow: 5px 5px var(--box-shadow);
 }
 
 #tumblr-quote {
     display: block;
-    width: 10%;
+    height: 48px;
+    border-radius: 5px;
+    box-shadow: 5px 5px var(--box-shadow);
+
 }
 
-#new-quote:hover {
-    background-color: #a8a8a8;
-    width: auto;
-}

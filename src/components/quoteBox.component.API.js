@@ -78,7 +78,7 @@ class QuoteBox extends React.Component {
                     <p id="text">{this.state.quote}"</p>
                     <p id="author">- {this.state.author}</p>
                 </div>
-                <div className="container">
+                <div id="button-row" className="container">
                     <div className="row">
                         <div className="col-sm">
                             <img 
@@ -86,7 +86,7 @@ class QuoteBox extends React.Component {
                             id="tweet-quote" 
                             href="https://twitter.com/intent/tweet?text={this.state.quote}" 
                             target="_blanck"
-                            width="34px"    
+                            cursor="pointer"    
                             />
                         </div>
                         <div className="col-sm">
@@ -95,7 +95,6 @@ class QuoteBox extends React.Component {
                             id="tumblr-quote" 
                             href="#" 
                             target="_blanck"
-                            width="34px"    
                             />
                         </div>
                         <div className="col-sm">
