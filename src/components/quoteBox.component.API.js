@@ -65,8 +65,8 @@ class QuoteBox extends React.Component {
     ////////////// RENDER
     render() {
         return (
-            <div className="container" id="quote-box">
-                <div id="quote-text" className="container">
+            <div className="container-fluid" id="quote-box">
+                <div id="quote-text">
                     <img 
                         id="comillas"
                         src={comillas} 
@@ -78,9 +78,10 @@ class QuoteBox extends React.Component {
                     <p id="text">{this.state.quote}"</p>
                     <p id="author">- {this.state.author}</p>
                 </div>
-                <div id="button-row" className="container">
+                <div id="button-row">
                     <div className="row">
-                        <div className="col-sm">
+                        
+                        <div className="col-3">
                             <img 
                             src={tweeter} 
                             id="tweet-quote" 
@@ -89,7 +90,7 @@ class QuoteBox extends React.Component {
                             cursor="pointer"    
                             />
                         </div>
-                        <div className="col-sm">
+                        <div className="col-3">
                             <img 
                             src={tumblr} 
                             id="tumblr-quote" 
@@ -97,11 +98,12 @@ class QuoteBox extends React.Component {
                             target="_blanck"
                             />
                         </div>
-                        <div className="col-sm">
+                        <div className="col-6 d-flex justify-content-end">
                             <button 
                             id="new-quote" 
                             onClick={this.changeQuote}
-                            >Next quote</button>
+                            >
+                            <i class="fas fa-redo-alt"></i> Next quote</button>
                         </div>
                     </div>
                 </div>

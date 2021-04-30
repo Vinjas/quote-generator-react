@@ -5,6 +5,7 @@
     --black: #3D3D3D;
     --white: #F5F5F5;
     --box-shadow: #263544;
+    --background: #33475B;
 }
 
 #quote-box {
@@ -32,9 +33,7 @@
 #text {
     color: var(--black);
     font-size: 19px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding: 20px 20px 20px 30px;
     
 }
 
@@ -44,35 +43,53 @@
     padding-bottom: 20px;
 }
 
-
 #button-row {
-    width: 400px;
+    max-width: 400px;
 }
 
 #new-quote {
     background-color: var(--white);
+    color: var(--background);
     border: none;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 10px 36px;
     box-shadow: 20px 5px var(--box-shadow);
-    width: 120px;
+    /*width: 120px;*/
+    margin-bottom: 50px;
 }
 #new-quote:hover {
     background-color: #a8a8a8;
 }
 
 #tweet-quote {
-    display: block;
+    /*display: block;*/
     height: 48px;
     border-radius: 5px;
     box-shadow: 5px 5px var(--box-shadow);
 }
 
 #tumblr-quote {
-    display: block;
+    /*display: block;*/
     height: 48px;
     border-radius: 5px;
     box-shadow: 5px 5px var(--box-shadow);
 
 }
 
+@media (min-width: 768px) {
+    #quote-box {
+        max-width: 600px;
+    }
+    #button-row {
+        max-width: 600px;
+    }
+    
+}
+@media (min-width: 1024px) {
+    #quote-box {
+        max-width: 900px;
+    }
+    #button-row {
+        max-width: 900px;
+    }
+}
