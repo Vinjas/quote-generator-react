@@ -10,7 +10,7 @@
 
 #quote-box {
     font-family:'Questrial', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     max-width: 400px;
     margin-top: 120px;
 }
@@ -32,15 +32,31 @@
 }
 #text {
     color: var(--black);
-    font-size: 19px;
+    font-size: 22px;
     padding: 20px 20px 20px 30px;
-    
+    display: block;
+    /*animation-duration: 3s;
+    animation-name: slidein;*/
 }
+
+/*@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%
+    }
+    
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}*/
+
 
 #author {
     color: var(--light-blue);
-    padding-left: 20px;
+    padding-left: 30px;
     padding-bottom: 20px;
+    display: block;
 }
 
 #button-row {
@@ -76,6 +92,24 @@
 
 }
 
+.messageout-enter {
+    opacity: 0.01;
+}
+.messageout-enter.messageout-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.messageout-leave {
+    opacity: 1;
+}
+  
+.messageout-leave.messageout-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
+
 @media (min-width: 768px) {
     #quote-box {
         max-width: 600px;
@@ -83,7 +117,6 @@
     #button-row {
         max-width: 600px;
     }
-    
 }
 @media (min-width: 1024px) {
     #quote-box {

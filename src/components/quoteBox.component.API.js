@@ -1,18 +1,18 @@
 import React from "react"
-import "./quoteBox.css"
 import comillas from "../assets/quote-left-solid.svg"
 import tweeter from "../assets/twitter-square-brands.svg"
 import tumblr from "../assets/tumblr-square-brands.svg"
-import nextIcon from "../assets/redo-alt-solid.svg"
 
-class QuoteBox extends React.Component {
+import "./quoteBox.css"
+
+export class QuoteBox extends React.Component {
     constructor(props) {
         super(props)
         this.changeQuote = this.changeQuote.bind(this)
                         
         this.state = {
             quote: "",
-            author: ""
+            author: "",
         }
     }
     // API GET - RANDOM QUOTE
@@ -75,8 +75,10 @@ class QuoteBox extends React.Component {
                         height="33px"
                         position
                     />
-                    <p id="text">{this.state.quote}"</p>
-                    <p id="author">- {this.state.author}</p>
+                        <div>
+                            <p id="text">{this.state.quote}</p>
+                            <p id="author">{this.state.author}</p>
+                        </div>
                 </div>
                 <div id="button-row">
                     <div className="row">
@@ -111,5 +113,3 @@ class QuoteBox extends React.Component {
         )
     }
 }
-
-export default QuoteBox

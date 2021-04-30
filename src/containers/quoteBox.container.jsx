@@ -1,10 +1,8 @@
 import React from "react"
-import QuoteBox from "../components/quoteBox.component.API"
+import {QuoteBox} from "../components/quoteBox.component.API"
+import { CSSTransition } from "react-transition-group";
 
-const QuoteContainer =
+export const QuoteContainer =
     <div id="app">
-        <QuoteBox/>
+        <QuoteBox />
     </div>
-
-
-export default QuoteContainer
