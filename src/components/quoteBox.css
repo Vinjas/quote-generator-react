@@ -34,13 +34,29 @@
     color: var(--black);
     font-size: 22px;
     padding: 20px 20px 20px 30px;
-    
+    display: block;
+    /*animation-duration: 3s;
+    animation-name: slidein;*/
 }
+
+/*@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%
+    }
+    
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}*/
+
 
 #author {
     color: var(--light-blue);
     padding-left: 30px;
     padding-bottom: 20px;
+    display: block;
 }
 
 #button-row {
@@ -76,6 +92,24 @@
     box-shadow: 5px 5px var(--box-shadow);
     cursor: pointer;
 }
+
+.messageout-enter {
+    opacity: 0.01;
+}
+.messageout-enter.messageout-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.messageout-leave {
+    opacity: 1;
+}
+  
+.messageout-leave.messageout-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
 
 @media (min-width: 768px) {
     #quote-box {
