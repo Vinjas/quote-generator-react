@@ -2,10 +2,7 @@ import React from "react"
 import comillas from "../assets/quote-left-solid.svg"
 import tweeter from "../assets/twitter-square-brands.svg"
 import tumblr from "../assets/tumblr-square-brands.svg"
-<<<<<<< HEAD
 import {ShareTweet, ShareTumblr} from "./ShareButtons.js"
-=======
->>>>>>> 84b24e7c133de3a9c65ade32cad4ad01a8fb1c7e
 
 import "./quoteBox.css"
 
@@ -75,18 +72,11 @@ export class QuoteBox extends React.Component {
                         height="33px"
                         position
                     />
-<<<<<<< HEAD
 
                     {/* TEXT QUOTE */}
                     <p id="text">{this.state.quote}</p>
                     <p id="author">{this.state.author}</p>
 
-=======
-                        <div>
-                            <p id="text">{this.state.quote}</p>
-                            <p id="author">{this.state.author}</p>
-                        </div>
->>>>>>> 84b24e7c133de3a9c65ade32cad4ad01a8fb1c7e
                 </div>
                 <div id="button-row">
                     <div className="row">
