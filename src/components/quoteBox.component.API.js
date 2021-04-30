@@ -1,18 +1,19 @@
 import React from "react"
-import "./quoteBox.css"
 import comillas from "../assets/quote-left-solid.svg"
 import tweeter from "../assets/twitter-square-brands.svg"
 import tumblr from "../assets/tumblr-square-brands.svg"
-import { CSSTransitionGroup } from 'react-transition-group'
+import { CSSTransition } from "react-transition-group"
 
-class QuoteBox extends React.Component {
+import "./quoteBox.css"
+
+export class QuoteBox extends React.Component {
     constructor(props) {
         super(props)
         this.changeQuote = this.changeQuote.bind(this)
                         
         this.state = {
             quote: "",
-            author: ""
+            author: "",
         }
     }
     // API GET - RANDOM QUOTE
@@ -75,13 +76,13 @@ class QuoteBox extends React.Component {
                         height="33px"
                         position
                     />
-                    <CSSTransition
-                        key={this.state.author}
-                        timeout={1000}
-                        className="messageout"
-                    >
-                        <p id="text">{this.state.quote}"</p>
-                        <p id="author">- {this.state.author}</p>
+                    {/*<p id="text">{this.state.quote}"</p>
+                    <p id="author">- {this.state.author}</p>*/}
+                    <CSSTransition>
+                        <div>
+                            <p id="text">{this.state.quote}"</p>
+                            <p id="author">- {this.state.author}</p>
+                        </div>
                     </CSSTransition>
                 </div>
                 <div id="button-row">
@@ -117,5 +118,3 @@ class QuoteBox extends React.Component {
         )
     }
 }
-
-export default QuoteBox
