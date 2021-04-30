@@ -2,7 +2,6 @@ import React from "react"
 import comillas from "../assets/quote-left-solid.svg"
 import tweeter from "../assets/twitter-square-brands.svg"
 import tumblr from "../assets/tumblr-square-brands.svg"
-import { CSSTransition } from "react-transition-group"
 
 import "./quoteBox.css"
 
@@ -76,14 +75,10 @@ export class QuoteBox extends React.Component {
                         height="33px"
                         position
                     />
-                    {/*<p id="text">{this.state.quote}"</p>
-                    <p id="author">- {this.state.author}</p>*/}
-                    <CSSTransition>
                         <div>
-                            <p id="text">{this.state.quote}"</p>
-                            <p id="author">- {this.state.author}</p>
+                            <p id="text">{this.state.quote}</p>
+                            <p id="author">{this.state.author}</p>
                         </div>
-                    </CSSTransition>
                 </div>
                 <div id="button-row">
                     <div className="row">

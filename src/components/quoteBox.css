@@ -10,7 +10,7 @@
 
 #quote-box {
     font-family:'Questrial', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     max-width: 400px;
     margin-top: 120px;
 }
@@ -32,7 +32,7 @@
 }
 #text {
     color: var(--black);
-    font-size: 19px;
+    font-size: 22px;
     padding: 20px 20px 20px 30px;
     display: block;
     /*animation-duration: 3s;
@@ -54,7 +54,7 @@
 
 #author {
     color: var(--light-blue);
-    padding-left: 20px;
+    padding-left: 30px;
     padding-bottom: 20px;
     display: block;
 }
