@@ -3,7 +3,7 @@ import "./quoteBox.css"
 import comillas from "../assets/quote-left-solid.svg"
 import tweeter from "../assets/twitter-square-brands.svg"
 import tumblr from "../assets/tumblr-square-brands.svg"
-import nextIcon from "../assets/redo-alt-solid.svg"
+import {ShareTweet, ShareTumblr} from "./ShareButtons.js"
 
 class QuoteBox extends React.Component {
     constructor(props) {
@@ -59,10 +59,6 @@ class QuoteBox extends React.Component {
         })
     }
 
-    // Debug button
-
-
-    ////////////// RENDER
     render() {
         return (
             <div className="container-fluid" id="quote-box">
@@ -75,33 +71,49 @@ class QuoteBox extends React.Component {
                         height="33px"
                         position
                     />
-                    <p id="text">{this.state.quote}"</p>
-                    <p id="author">- {this.state.author}</p>
+
+                    {/* TEXT QUOTE */}
+                    <p id="text">{this.state.quote}</p>
+                    <p id="author">{this.state.author}</p>
+
                 </div>
                 <div id="button-row">
                     <div className="row">
                         
-                        <div className="col-3">
-                            <img 
-                            src={tweeter} 
-                            id="tweet-quote" 
-                            href="https://twitter.com/intent/tweet?text={this.state.quote}" 
-                            target="_blanck"
-                            cursor="pointer"    
-                            />
+                        {/* TWITTER BUTTON */}
+                        <div className="col-2">
+                            <a 
+                                href={ShareTweet(this.state.quote, this.state.author)}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <img 
+                                    src={tweeter} 
+                                    id="tweet-quote" 
+                                    cursor="pointer"    
+                                />
+                            </a>
                         </div>
-                        <div className="col-3">
-                            <img 
-                            src={tumblr} 
-                            id="tumblr-quote" 
-                            href="#" 
-                            target="_blanck"
-                            />
+
+                        {/* TUMBLR BUTTON */}
+                        <div className="col-2">
+                            <a 
+                                href={ShareTumblr(this.state.quote)}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <img 
+                                    src={tumblr} 
+                                    id="tumblr-quote" 
+                                />
+                            </a>
                         </div>
-                        <div className="col-6 d-flex justify-content-end">
+
+                        {/* NEXT QUOTE BUTTON */}
+                        <div className="col-8 d-flex justify-content-end">
                             <button 
-                            id="new-quote" 
-                            onClick={this.changeQuote}
+                                id="new-quote" 
+                                onClick={this.changeQuote}
                             >
                             <i class="fas fa-redo-alt"></i> Next quote</button>
                         </div>

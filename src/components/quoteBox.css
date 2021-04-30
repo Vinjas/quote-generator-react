@@ -10,7 +10,7 @@
 
 #quote-box {
     font-family:'Questrial', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     max-width: 400px;
     margin-top: 120px;
 }
@@ -32,14 +32,14 @@
 }
 #text {
     color: var(--black);
-    font-size: 19px;
+    font-size: 22px;
     padding: 20px 20px 20px 30px;
     
 }
 
 #author {
     color: var(--light-blue);
-    padding-left: 20px;
+    padding-left: 30px;
     padding-bottom: 20px;
 }
 
@@ -66,6 +66,7 @@
     height: 48px;
     border-radius: 5px;
     box-shadow: 5px 5px var(--box-shadow);
+    cursor: pointer;
 }
 
 #tumblr-quote {
@@ -73,7 +74,7 @@
     height: 48px;
     border-radius: 5px;
     box-shadow: 5px 5px var(--box-shadow);
-
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -83,7 +84,6 @@
     #button-row {
         max-width: 600px;
     }
-    
 }
 @media (min-width: 1024px) {
     #quote-box {
