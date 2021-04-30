@@ -34,8 +34,22 @@
     color: var(--black);
     font-size: 19px;
     padding: 20px 20px 20px 30px;
-    
+    /*animation-duration: 3s;
+    animation-name: slidein;*/
 }
+
+/*@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%
+    }
+    
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}*/
+
 
 #author {
     color: var(--light-blue);
