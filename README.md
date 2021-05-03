@@ -13,4 +13,5 @@ The following libraries have also been used:
 ## Launching the APP
 The application has been publicly deployed on surge.sh.
 It can be accessed through the following link:
-http://motivational-quotes-to-inspire.surge.sh/
+
+**http://motivational-quotes-to-inspire.surge.sh/**
