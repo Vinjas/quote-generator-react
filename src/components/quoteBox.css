@@ -8,6 +8,10 @@
     --background: #33475B;
 }
 
+body {
+    background-color: aqua;
+}
+
 #quote-box {
     font-family:'Questrial', sans-serif;
     font-size: 18px;
@@ -73,8 +77,10 @@
     /*width: 120px;*/
     margin-bottom: 50px;
 }
-#new-quote:hover {
-    background-color: #a8a8a8;
+
+#new-quote:focus {
+    outline: none;
+    /*animation: fade-in-keyframes 1s;*/
 }
 
 #tweet-quote {
@@ -93,21 +99,12 @@
     cursor: pointer;
 }
 
-.messageout-enter {
-    opacity: 0.01;
+.fade {
+    animation: fade-in-keyframes 1s;
 }
-.messageout-enter.messageout-enter-active {
-    opacity: 1;
-    transition: opacity 500ms ease-in;
-}
-
-.messageout-leave {
-    opacity: 1;
-}
-  
-.messageout-leave.messageout-leave-active {
-    opacity: 0.01;
-    transition: opacity 300ms ease-in;
+@keyframes fade-in-keyframes {
+    from {opacity: 0}
+    to {opacity: 1}
 }
 
 

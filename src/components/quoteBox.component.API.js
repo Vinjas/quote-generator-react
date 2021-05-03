@@ -14,6 +14,7 @@ export class QuoteBox extends React.Component {
         this.state = {
             quote: "",
             author: "",
+            fade: false,
         }
     }
     // API GET - RANDOM QUOTE
@@ -40,7 +41,10 @@ export class QuoteBox extends React.Component {
     }
         
     // BUTTON NEXT
+    
+    
     changeQuote() {
+        this.setState({fade: true})
         fetch("https://quotes15.p.rapidapi.com/quotes/random/", {
             "method": "GET",
             "headers": {
@@ -52,7 +56,7 @@ export class QuoteBox extends React.Component {
         .then(response => {
             this.setState({
                 quote: response.content,
-                author: response.originator.name
+                author: response.originator.name,
             })
         })
         .catch(err => {
@@ -63,19 +67,30 @@ export class QuoteBox extends React.Component {
     render() {
         return (
             <div className="container-fluid" id="quote-box">
-                <div id="quote-text">
+                <div 
+                id="quote-text"
+                className={this.state.fade ? "fade" : ""}
+                onAnimationEnd={() => this.setState({fade: false})} 
+                >
                     <img 
                         id="comillas"
                         src={comillas} 
                         alt="svg"
                         width="33px"
-                        height="33px"
-                        position
+                        height="33px"              
                     />
 
                     {/* TEXT QUOTE */}
-                    <p id="text">{this.state.quote}</p>
-                    <p id="author">{this.state.author}</p>
+                    <p 
+                    id="text"
+                    >
+                        {this.state.quote}
+                    </p>
+                    <p 
+                    id="author"
+                    >
+                        {this.state.author}
+                    </p>
 
                 </div>
                 <div id="button-row">
@@ -89,9 +104,9 @@ export class QuoteBox extends React.Component {
                                 rel="noreferrer"
                             >
                                 <img 
+                                    alt="tweeter"
                                     src={tweeter} 
-                                    id="tweet-quote" 
-                                    cursor="pointer"    
+                                    id="tweet-quote"     
                                 />
                             </a>
                         </div>
@@ -104,6 +119,7 @@ export class QuoteBox extends React.Component {
                                 rel="noreferrer"
                             >
                                 <img 
+                                    alt="tumblr"
                                     src={tumblr} 
                                     id="tumblr-quote" 
                                 />
@@ -114,9 +130,9 @@ export class QuoteBox extends React.Component {
                         <div className="col-8 d-flex justify-content-end">
                             <button 
                                 id="new-quote" 
-                                onClick={this.changeQuote}
+                                onClick={this.changeQuote} 
                             >
-                            <i class="fas fa-redo-alt"></i> Next quote</button>
+                            <i className="fas fa-redo-alt"></i> Next quote</button>
                         </div>
                     </div>
                 </div>
