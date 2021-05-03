@@ -8,6 +8,10 @@
     --background: #33475B;
 }
 
+body {
+    background-color: aqua;
+}
+
 #quote-box {
     font-family:'Questrial', sans-serif;
     font-size: 18px;
@@ -71,10 +75,11 @@
     padding: 10px 36px;
     box-shadow: 20px 5px var(--box-shadow);
     /*width: 120px;*/
-    margin-bottom: 50px;
 }
-#new-quote:hover {
-    background-color: #a8a8a8;
+
+#new-quote:focus {
+    outline: none;
+    /*animation: fade-in-keyframes 1s;*/
 }
 
 #tweet-quote {
@@ -91,25 +96,51 @@
     border-radius: 5px;
     box-shadow: 5px 5px var(--box-shadow);
     cursor: pointer;
+    /*background: linear-gradient(-45deg, #92dcf7, #33475B, #23a6d5, #23d5ab;*/
 }
 
-.messageout-enter {
-    opacity: 0.01;
+#vinjas {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 50px;
+    margin-top: 30px;
 }
-.messageout-enter.messageout-enter-active {
-    opacity: 1;
-    transition: opacity 500ms ease-in;
+#vinjas a {
+    color: white;
+}
+.negrita {
+    font-weight: 700;
+}
+.buttonAnim {
+    animation: button-animation 500ms;
+}
+.fade {
+    animation: fade-in-keyframes 1s;
 }
 
-.messageout-leave {
-    opacity: 1;
-}
-  
-.messageout-leave.messageout-leave-active {
-    opacity: 0.01;
-    transition: opacity 300ms ease-in;
+@keyframes button-animation {
+    0% {background-color: var(--white); color: var(--background)}
+    15% {background-color: var(--box-shadow); color: var(--box-shadow);}
+    100% {background-color: var(--white); color: var(--background)}
 }
 
+@keyframes fade-in-keyframes {
+    0% {opacity: 1}
+    50% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 @media (min-width: 768px) {
     #quote-box {

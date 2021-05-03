@@ -6,7 +6,6 @@ const ShareTweet = (content, author) => {
     + author
     )
 }
-
 const ShareTumblr = (content) => {   
     return (
     "https://www.tumblr.com/widgets/share/tool?posttype=famousquote&tags=famousquotes&caption=Zig%20Ziglar&content="

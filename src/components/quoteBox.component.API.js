@@ -1,4 +1,5 @@
 import React from "react"
+import {Helmet} from "react-helmet"
 import comillas from "../assets/quote-left-solid.svg"
 import tweeter from "../assets/twitter-square-brands.svg"
 import tumblr from "../assets/tumblr-square-brands.svg"
@@ -14,11 +15,12 @@ export class QuoteBox extends React.Component {
         this.state = {
             quote: "",
             author: "",
+            fade: false,
         }
     }
     // API GET - RANDOM QUOTE
     componentDidMount() {
-        document.body.style.backgroundColor = "#33475B"
+        //document.body.style.backgroundColor = "#33475B"
 
         fetch("https://quotes15.p.rapidapi.com/quotes/random/", {
         "method": "GET",
@@ -40,7 +42,10 @@ export class QuoteBox extends React.Component {
     }
         
     // BUTTON NEXT
+    
+    
     changeQuote() {
+        this.setState({fade: true})
         fetch("https://quotes15.p.rapidapi.com/quotes/random/", {
             "method": "GET",
             "headers": {
@@ -52,7 +57,7 @@ export class QuoteBox extends React.Component {
         .then(response => {
             this.setState({
                 quote: response.content,
-                author: response.originator.name
+                author: response.originator.name,
             })
         })
         .catch(err => {
@@ -63,21 +68,38 @@ export class QuoteBox extends React.Component {
     render() {
         return (
             <div className="container-fluid" id="quote-box">
-                <div id="quote-text">
+                {/* BACKGROUND ANIMATION WITH REACT HELMET */}
+                <Helmet>
+                    <style>
+                       {"body { background: linear-gradient(-45deg, #23a6d5, #33475B, #23a6d5, #23d5ab); width: 100%; height:100%; background-size: 400% 400%; animation: gradient 15s ease infinite;}"} 
+                    </style>
+                </Helmet>
+                
+                <div 
+                id="quote-text"
+                className={this.state.fade ? "fade" : ""}
+                onAnimationEnd={() => this.setState({fade: false})} 
+                >
                     <img 
                         id="comillas"
                         src={comillas} 
                         alt="svg"
                         width="33px"
-                        height="33px"
-                        position
+                        height="33px"              
                     />
 
                     {/* TEXT QUOTE */}
-                    <p id="text">{this.state.quote}</p>
-                    <p id="author">{this.state.author}</p>
-
+                    <p 
+                    id="text">
+                        {this.state.quote}
+                    </p>
+                    <p 
+                    id="author">
+                        {this.state.author}
+                    </p>
                 </div>
+
+
                 <div id="button-row">
                     <div className="row">
                         
@@ -89,9 +111,9 @@ export class QuoteBox extends React.Component {
                                 rel="noreferrer"
                             >
                                 <img 
+                                    alt="tweeter"
                                     src={tweeter} 
-                                    id="tweet-quote" 
-                                    cursor="pointer"    
+                                    id="tweet-quote"     
                                 />
                             </a>
                         </div>
@@ -104,6 +126,7 @@ export class QuoteBox extends React.Component {
                                 rel="noreferrer"
                             >
                                 <img 
+                                    alt="tumblr"
                                     src={tumblr} 
                                     id="tumblr-quote" 
                                 />
@@ -113,13 +136,24 @@ export class QuoteBox extends React.Component {
                         {/* NEXT QUOTE BUTTON */}
                         <div className="col-8 d-flex justify-content-end">
                             <button 
+                                className={this.state.fade ? "buttonAnim" : ""}
                                 id="new-quote" 
-                                onClick={this.changeQuote}
+                                onClick={this.changeQuote} 
                             >
-                            <i class="fas fa-redo-alt"></i> Next quote</button>
+                            <i className="fas fa-redo-alt"></i> Next quote</button>
                         </div>
                     </div>
                 </div>
+
+                <div id="vinjas">
+                    <a
+                    href="https://github.com/Vinjas"
+                    target="_blank"
+                    rel="noreferrer">
+                        by <span className="negrita">Vinjas</span>
+                    </a>
+                </div>
+
             </div>
         )
     }
