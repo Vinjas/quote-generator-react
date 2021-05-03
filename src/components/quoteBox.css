@@ -97,6 +97,7 @@ body {
     border-radius: 5px;
     box-shadow: 5px 5px var(--box-shadow);
     cursor: pointer;
+    /*background: linear-gradient(-45deg, #92dcf7, #33475B, #23a6d5, #23d5ab;*/
 }
 
 .fade {
@@ -107,6 +108,17 @@ body {
     to {opacity: 1}
 }
 
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 @media (min-width: 768px) {
     #quote-box {

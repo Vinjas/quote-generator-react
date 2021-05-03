@@ -1,4 +1,5 @@
 import React from "react"
+import {Helmet} from "react-helmet"
 import comillas from "../assets/quote-left-solid.svg"
 import tweeter from "../assets/twitter-square-brands.svg"
 import tumblr from "../assets/tumblr-square-brands.svg"
@@ -19,7 +20,7 @@ export class QuoteBox extends React.Component {
     }
     // API GET - RANDOM QUOTE
     componentDidMount() {
-        document.body.style.backgroundColor = "#33475B"
+        //document.body.style.backgroundColor = "#33475B"
 
         fetch("https://quotes15.p.rapidapi.com/quotes/random/", {
         "method": "GET",
@@ -67,6 +68,15 @@ export class QuoteBox extends React.Component {
     render() {
         return (
             <div className="container-fluid" id="quote-box">
+                <Helmet>
+                    <style>
+                       {
+                            //"body { background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); width: 100%; height:100%; background-size: 400% 400%; animation: gradient 15s ease infinite;}"
+                           "body { background: linear-gradient(-45deg, #23a6d5, #33475B, #23a6d5, #23d5ab); width: 100%; height:100%; background-size: 400% 400%; animation: gradient 15s ease infinite;}"
+                       } 
+                    </style>
+                </Helmet>
+                
                 <div 
                 id="quote-text"
                 className={this.state.fade ? "fade" : ""}
