@@ -68,12 +68,10 @@ export class QuoteBox extends React.Component {
     render() {
         return (
             <div className="container-fluid" id="quote-box">
+                {/* BACKGROUND ANIMATION WITH REACT HELMET */}
                 <Helmet>
                     <style>
-                       {
-                            //"body { background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); width: 100%; height:100%; background-size: 400% 400%; animation: gradient 15s ease infinite;}"
-                           "body { background: linear-gradient(-45deg, #23a6d5, #33475B, #23a6d5, #23d5ab); width: 100%; height:100%; background-size: 400% 400%; animation: gradient 15s ease infinite;}"
-                       } 
+                       {"body { background: linear-gradient(-45deg, #23a6d5, #33475B, #23a6d5, #23d5ab); width: 100%; height:100%; background-size: 400% 400%; animation: gradient 15s ease infinite;}"} 
                     </style>
                 </Helmet>
                 
@@ -92,17 +90,16 @@ export class QuoteBox extends React.Component {
 
                     {/* TEXT QUOTE */}
                     <p 
-                    id="text"
-                    >
+                    id="text">
                         {this.state.quote}
                     </p>
                     <p 
-                    id="author"
-                    >
+                    id="author">
                         {this.state.author}
                     </p>
-
                 </div>
+
+
                 <div id="button-row">
                     <div className="row">
                         
@@ -139,6 +136,7 @@ export class QuoteBox extends React.Component {
                         {/* NEXT QUOTE BUTTON */}
                         <div className="col-8 d-flex justify-content-end">
                             <button 
+                                className={this.state.fade ? "buttonAnim" : ""}
                                 id="new-quote" 
                                 onClick={this.changeQuote} 
                             >
@@ -146,6 +144,16 @@ export class QuoteBox extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <div id="vinjas">
+                    <a
+                    href="https://github.com/Vinjas"
+                    target="_blank"
+                    rel="noreferrer">
+                        by <span className="negrita">Vinjas</span>
+                    </a>
+                </div>
+
             </div>
         )
     }

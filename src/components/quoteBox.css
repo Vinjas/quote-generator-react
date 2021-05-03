@@ -75,7 +75,6 @@ body {
     padding: 10px 36px;
     box-shadow: 20px 5px var(--box-shadow);
     /*width: 120px;*/
-    margin-bottom: 50px;
 }
 
 #new-quote:focus {
@@ -100,12 +99,35 @@ body {
     /*background: linear-gradient(-45deg, #92dcf7, #33475B, #23a6d5, #23d5ab;*/
 }
 
+#vinjas {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+#vinjas a {
+    color: white;
+}
+.negrita {
+    font-weight: 700;
+}
+.buttonAnim {
+    animation: button-animation 500ms;
+}
 .fade {
     animation: fade-in-keyframes 1s;
 }
+
+@keyframes button-animation {
+    0% {background-color: var(--white); color: var(--background)}
+    15% {background-color: var(--box-shadow); color: var(--box-shadow);}
+    100% {background-color: var(--white); color: var(--background)}
+}
+
 @keyframes fade-in-keyframes {
-    from {opacity: 0}
-    to {opacity: 1}
+    0% {opacity: 1}
+    50% {opacity: 0}
+    100% {opacity: 1}
 }
 
 @keyframes gradient {
